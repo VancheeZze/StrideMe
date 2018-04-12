@@ -1,1 +1,3 @@
 # StrideMe
+
+> Stock trading journal

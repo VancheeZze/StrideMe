@@ -1,0 +1,3 @@
+@function space($multiplyer: 1, $base: 7px) {
+	@return $base * $multiplyer;
+}

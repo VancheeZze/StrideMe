@@ -1,0 +1,12 @@
+/**
+* A generic spacin function for margin and padding with a 7px base.
+*
+* Example:
+* margin: space();        => margin: 7px;
+* margin: space(3);       => margin: 21px;
+* margin: space(3, 10);   => margin: 30px;
+*/
+
+@function space($multiplyer: 1, $base: 7px) {
+  @return $base * $multiplyer;
+}
