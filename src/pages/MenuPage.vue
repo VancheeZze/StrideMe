@@ -3,7 +3,7 @@
     <v-ons-list-title>Portfolio Value</v-ons-list-title>
     <v-ons-list>
       <v-ons-list-item>
-        <div class="center">$ 10,000.00</div>
+        <div class="center">{{ $store.state.account.portfolioValue | currency }}</div>
       </v-ons-list-item>
     </v-ons-list>
 

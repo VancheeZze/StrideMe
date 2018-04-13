@@ -10,11 +10,13 @@ import $ons from 'vue-onsenui/esm'
 import * as VOns from './vue-onsen-components'
 import store from './store'
 import App from './App'
+import Filters from './filters'
 
 Vue.config.productionTip = false
 
 Vue.use($ons)
 Object.values(VOns).forEach(comp => Vue.component(comp.name, comp))
+Object.keys(Filters).forEach(filter => Vue.filter(filter, Filters[ filter ]))
 
 /* eslint-disable no-new */
 new Vue({
