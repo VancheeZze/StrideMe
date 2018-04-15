@@ -56,10 +56,4 @@ ons-splitter-side[side=left][animation=overlay] {
   text-transform: uppercase !important;
 }
 
-.menuIcon {
-  position: absolute;
-  top: space(2);
-  left: space(2);
-  color: $primary;
-}
 </style>

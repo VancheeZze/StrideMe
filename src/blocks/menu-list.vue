@@ -6,8 +6,9 @@
         v-for="item in menuItems" 
         :key="item.title"
         :title="item.title"
-        :to="item.to"
+        :page="item.page"
         :chevron="item.chevron"
+        @goTo="goTo"
       > 
       </menu-item>
     </v-ons-list>
@@ -30,11 +31,15 @@ export default {
       type: String,
       required: false
     }
+  },
+  methods: {
+    goTo (page) {
+      this.$emit('goTo', page)
+    }
   }
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
 
 // @import '../assets/styles/import-all';

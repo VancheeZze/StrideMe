@@ -1,12 +1,30 @@
 import AnalyticsPage from '../pages/AnalyticsPage'
 import HomePage from '../pages/HomePage'
 import StockDetailPage from '../pages/StockDetailPage'
+import AccountPage from '../pages/AccountPage'
 
 const pages = {
   AnalyticsPage,
   HomePage,
-  StockDetailPage
+  StockDetailPage,
+  AccountPage
 }
+
+const menuPages = [
+  {
+    title: 'Home',
+    page: 'HomePage',
+    index: 0
+  }, {
+    title: 'Analytics',
+    page: 'AnalyticsPage',
+    index: 1
+  }, {
+    title: 'Account',
+    page: 'AccountPage',
+    index: 2
+  }
+]
 
 const noPage = (title) => {
   console.warn(`No page { ${title} } found. Did you register page in page-stack state?`)
@@ -26,9 +44,12 @@ export default {
       }
     },
     'page-pop' (state) {
-      state.stack.pop()
+      console.log(state.stack.length)
+      if (state.stack.length > 1) {
+        state.stack.pop()
+      }
     },
-    replace (state, page) {
+    'page-replace' (state, page) {
       if (pages[page]) {
         state.stack.pop()
         state.stack.push(pages[page])
@@ -45,6 +66,9 @@ export default {
       } else {
         noPage(page)
       }
+    },
+    getMenuPages: (state) => {
+      return menuPages
     }
   }
 }

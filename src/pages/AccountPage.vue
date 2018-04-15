@@ -17,7 +17,7 @@ export default {
   },
   data () {
     return {
-      pageTitle: 'Analytics Page'
+      pageTitle: 'Account Page'
     }
   },
   methods: {

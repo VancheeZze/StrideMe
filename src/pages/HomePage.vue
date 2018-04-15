@@ -1,11 +1,7 @@
 <template>
   <v-ons-page>
 
-    <div class="menuIcon">
-      <v-ons-button @click="$store.commit('splitter/toggle')">
-          <v-ons-icon icon="fa-bars" size="25px"></v-ons-icon>
-      </v-ons-button>
-    </div>
+    <menu-toggle></menu-toggle>
 
     <div class="header">
       <img src="../assets/logo.png" class="header__logo" alt="vue-logo">
@@ -29,13 +25,14 @@
 </template>
 
 <script>
-
 import StockList from '../blocks/stock-list'
+import MenuToggle from '../components/menu-toggle'
 
 export default {
   name: 'homePage',
   components: {
-    StockList
+    StockList,
+    MenuToggle
   },
   data () {
     return {

@@ -1,5 +1,5 @@
 <template>
-  <v-ons-list-item :modifier=" chevron ? 'chevron' : '' " tappable class='menu-list-item' @click="goTo(to)">
+  <v-ons-list-item :modifier=" chevron ? 'chevron' : '' " tappable class='menu-list-item' @click="goTo(page)">
     <div class="left" v-if="icon"><v-ons-icon fixed-width :icon="icon"></v-ons-icon></div>
     <div class="center">{{ title }}</div>
   </v-ons-list-item>
@@ -16,7 +16,7 @@ export default {
       type: String,
       required: true
     },
-    to: {
+    page: {
       type: String,
       required: true
     },
@@ -27,8 +27,8 @@ export default {
     }
   },
   methods: {
-    goTo (to) {
-      console.log(`Go to ${to}`)
+    goTo (page) {
+      this.$emit('goTo', page)
     }
   }
 }

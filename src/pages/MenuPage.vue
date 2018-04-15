@@ -8,8 +8,9 @@
     </v-ons-list>
 
     <menu-list
-      :menu-items="essentialLinks"
+      :menu-items="pages"
       title="Navigation"
+      @goTo="goTo"
     >
     </menu-list>
   </v-ons-page>
@@ -25,40 +26,13 @@ export default {
   },
   data () {
     return {
-      essentialLinks: [
-        {
-          title: 'Docs',
-          to: 'https://onsen.io/v2/docs/guide/vue/',
-          icon: 'fa-book'
-        },
-        {
-          title: 'Gitter Chat',
-          to: 'https://gitter.im/OnsenUI/OnsenUI',
-          icon: 'fa-commenting'
-        },
-        {
-          title: 'Forum',
-          to: 'https://community.onsen.io',
-          icon: 'fa-comments'
-        },
-        {
-          title: 'Twitter',
-          to: 'https://twitter.com/Onsen_UI',
-          icon: 'fa-twitter'
-        },
-        {
-          title: 'Playground',
-          to: 'https://tutorial.onsen.io/',
-          icon: 'fa-graduation-cap'
-        }
-      ]
+      pages: this.$store.getters.getMenuPages
     }
   },
   methods: {
-    goTo (url) {
-      const newWindow = window.open(url, '_blank')
-      newWindow.opener = null
-      newWindow.location = url
+    goTo (page) {
+      this.$store.commit('splitter/toggle')
+      this.$store.commit('page-replace', page)
     }
   }
 }
