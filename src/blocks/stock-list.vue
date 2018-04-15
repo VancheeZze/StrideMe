@@ -8,7 +8,7 @@
         :amount="trade.qty" 
         :key="trade.id"
         :chevron="hasChevrons"
-        @onGoToPage="onGoToPage"
+        @onClick="onClick"
       >
       </stock-list-item>
     </v-ons-list>
@@ -38,8 +38,8 @@ export default {
     }
   },
   methods: {
-    onGoToPage (page) {
-      this.$emit('onGoToPage', page)
+    onClick (page) {
+      this.$emit('onClick', page)
     }
   }
 }

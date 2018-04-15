@@ -9,8 +9,8 @@
 
 .menuIcon {
   position: absolute;
-  top: space(2);
-  left: space(2);
+  top: space(3);
+  left: space(3);
   color: $primary;
 }
 

@@ -1,5 +1,5 @@
 <template>
-  <v-ons-list-item :modifier=" chevron ? 'chevron' : '' " tappable class='stock-list-item' @click="goToPage()">
+  <v-ons-list-item :modifier=" chevron ? 'chevron' : '' " tappable class='stock-list-item' @click="onClick()">
     <div class="center">
       <span class="list-item__title uppercase">{{ ticket }}</span>
       <span class="list-item__subtitle uppercase">{{ amount }} Shares</span>
@@ -25,8 +25,8 @@ export default {
     }
   },
   methods: {
-    goToPage () {
-      this.$emit('onGoToPage', this.ticket)
+    onClick () {
+      this.$emit('onClick', this.ticket)
     }
   }
 }

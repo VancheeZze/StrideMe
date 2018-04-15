@@ -2,6 +2,7 @@
   <v-ons-page>
 
     <menu-toggle></menu-toggle>
+    <new-trade-button></new-trade-button>
 
     <div class="header">
       <img src="../assets/logo.png" class="header__logo" alt="vue-logo">
@@ -10,14 +11,14 @@
     <stock-list 
       title="Stocks"
       :trades="activeTrades"
-      @onGoToPage="onGoToPage"
+      @onClick="openTradeDetails"
     >
     </stock-list>
 
     <stock-list 
       title="History"
       :trades="activeTrades"
-      @onGoToPage="onGoToPage"
+      @onClick="openTradeDetails"
     >
     </stock-list>
 
@@ -27,12 +28,14 @@
 <script>
 import StockList from '../blocks/stock-list'
 import MenuToggle from '../components/menu-toggle'
+import NewTradeButton from '../components/new-trade-button'
 
 export default {
   name: 'homePage',
   components: {
     StockList,
-    MenuToggle
+    MenuToggle,
+    NewTradeButton
   },
   data () {
     return {
@@ -61,8 +64,8 @@ export default {
     }
   },
   methods: {
-    onGoToPage (page) {
-      this.$store.commit('set-current-trade', page)
+    openTradeDetails (trade) {
+      this.$store.commit('set-current-trade', trade)
       this.$store.commit('page-push', 'StockDetailPage')
     }
   }

@@ -1,13 +1,16 @@
 import AnalyticsPage from '../pages/AnalyticsPage'
 import HomePage from '../pages/HomePage'
-import StockDetailPage from '../pages/StockDetailPage'
 import AccountPage from '../pages/AccountPage'
+
+import StockDetailPage from '../pages/StockDetailPage'
+import NewTradePage from '../pages/NewTradePage'
 
 const pages = {
   AnalyticsPage,
   HomePage,
+  AccountPage,
   StockDetailPage,
-  AccountPage
+  NewTradePage
 }
 
 const menuPages = [
@@ -44,7 +47,6 @@ export default {
       }
     },
     'page-pop' (state) {
-      console.log(state.stack.length)
       if (state.stack.length > 1) {
         state.stack.pop()
       }

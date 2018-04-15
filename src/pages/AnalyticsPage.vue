@@ -2,6 +2,8 @@
   <v-ons-page>
     
     <menu-toggle></menu-toggle>
+    <new-trade-button></new-trade-button>
+    
     <h3>{{ pageTitle }}</h3>
 
   </v-ons-page>
@@ -9,11 +11,13 @@
 
 <script>
 import MenuToggle from '../components/menu-toggle'
+import NewTradeButton from '../components/new-trade-button'
 
 export default {
   name: 'analytics',
   components: {
-    MenuToggle
+    MenuToggle,
+    NewTradeButton
   },
   data () {
     return {
